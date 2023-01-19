@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background: violet;
+            overflow: hidden;
+        }
+        h1{
+            margin-top: 250px;
+            text-align: center;
+        }
+        h1>span{
+            color: white;
+            font-size: 8em;
+            text-transform: uppercase;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            position: relative;
+            margin: 0 20px
+        }
+        h1>span::before,
+        h1>span::after{
+            content: attr(data-txt);
+            position: absolute;
+            top: -4px;left: 0;
+            transition: .4s linear
+        }
+        h1>span::before{
+            color: rgba(128, 128, 128, 0.616);
+            z-index: -1;
+            transform-origin: 0;
+            transform: skewY(7deg)
+        }
+        h1>span::after{
+            color: rgb(110, 0, 86);
+            transform-origin: left;
+            transform:perspective(900px) rotateY(-35deg)
+        }
+        h1>span:hover::before{
+            transform: skewY(1deg)
+        }
+        h1>span:hover::after{
+            transform:perspective(900px) rotateY(-3deg)
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span data-txt="z">z</span>
+        <span data-txt="a">a</span>
+        <span data-txt="h">h</span>
+        <span data-txt="r">r</span>
+        <span data-txt="a">a</span>
+    </h1>
+</body>
+</html>
